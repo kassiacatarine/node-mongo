@@ -1,0 +1,23 @@
+version: '3'
+services:
+    mongodb:
+        image: mongo
+        networks: 
+            - production-network
+
+    node:
+        build:
+            dockerfile: ./docker/node-mongo.dockerfile
+            context: .
+        image: kassiacatarine/node-mongo
+        container_name: node-mongo
+        ports:
+            - "3000"
+        networks: 
+            - production-network
+        depends_on:
+            - "mongodb"
+
+networks: 
+    production-network:
+        driver: bridge
