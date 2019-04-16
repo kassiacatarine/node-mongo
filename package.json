@@ -7,9 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
+  "author": "Kássia Catarine",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "mongodb": "^3.2.2"
   }
 }
